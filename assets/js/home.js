@@ -108,7 +108,7 @@
     if (shortcutHint) {
       // 快捷鍵處理器同時吃 metaKey 與 ctrlKey，標示必須跟著平台走，否則會叫 Windows 使用者按不存在的鍵。
       var applePlatform = /Mac|iPhone|iPad|iPod/.test(navigator.platform || '');
-      shortcutHint.textContent = applePlatform ? '⌘ K' : 'Ctrl K';
+      shortcutHint.textContent = applePlatform ? '⌘K' : 'Ctrl + K';
     }
 
     document.addEventListener('keydown', function (event) {
