@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="zh-Hant" data-theme="system">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Git 指令產生器與操作說明。">
+  <meta name="theme-color" content="#f5f5f7" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#000000" media="(prefers-color-scheme: dark)">
+  <title>Git 指令中心</title>
+  <link rel="icon" href="assets/icons/favicon.svg" type="image/svg+xml">
+  <script src="assets/js/theme-init.js"></script>
+  <link rel="stylesheet" href="assets/css/tokens.css">
+  <link rel="stylesheet" href="assets/css/base.css">
+  <link rel="stylesheet" href="assets/css/components.css">
+  <link rel="stylesheet" href="assets/css/pages.css">
+</head>
+<body data-page="command">
+  <a class="skip-link" href="#main-content">跳到主要內容</a>
+
+  <header class="topbar" aria-label="主要導覽">
+    <div class="topbar__inner">
+      <a class="brand" href="index.html" aria-label="返回 Git 指令中心首頁">
+        <span class="brand__mark" aria-hidden="true">&gt;_</span>
+        <span class="brand__name">Git 指令中心</span>
+      </a>
+      <div class="topbar__actions">
+        <a class="button button--quiet topbar__home" href="index.html">
+          <span data-app-icon="chevron-left" aria-hidden="true"></span>
+          所有工具
+        </a>
+        <button class="icon-button" id="theme-toggle" type="button" aria-label="切換外觀" title="切換外觀"></button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="page-shell command-shell">
+    <div class="loading-state" id="command-loading" aria-live="polite">
+      <div class="loading-state__icon" aria-hidden="true"></div>
+      <p>正在載入工具…</p>
+    </div>
+    <article id="command-root"></article>
+  </main>
+
+  <footer class="site-footer page-shell">
+    <p>產生前先確認分支與遠端狀態；此工具只產生文字，不會執行 Git 指令。</p>
+    <a href="README.md">擴充說明</a>
+  </footer>
+
+  <div class="toast" id="toast" role="status" aria-live="polite" aria-atomic="true"></div>
+
+  <script src="data/command-index.js"></script>
+  <script src="assets/js/core.js"></script>
+  <script src="assets/js/command-page.js"></script>
+</body>
+</html>

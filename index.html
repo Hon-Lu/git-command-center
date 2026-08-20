@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="zh-Hant" data-theme="system">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="可離線使用、可持續擴充的 Git 指令產生器與筆記中心。">
+  <meta name="theme-color" content="#f5f5f7" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#000000" media="(prefers-color-scheme: dark)">
+  <title>Git 指令中心</title>
+  <link rel="icon" href="assets/icons/favicon.svg" type="image/svg+xml">
+  <script src="assets/js/theme-init.js"></script>
+  <link rel="stylesheet" href="assets/css/tokens.css">
+  <link rel="stylesheet" href="assets/css/base.css">
+  <link rel="stylesheet" href="assets/css/components.css">
+  <link rel="stylesheet" href="assets/css/pages.css">
+</head>
+<body data-page="home">
+  <a class="skip-link" href="#main-content">跳到主要內容</a>
+
+  <header class="topbar" aria-label="主要導覽">
+    <div class="topbar__inner">
+      <a class="brand" href="index.html" aria-label="Git 指令中心首頁">
+        <span class="brand__mark" aria-hidden="true">&gt;_</span>
+        <span class="brand__name">Git 指令中心</span>
+      </a>
+      <div class="topbar__actions">
+        <span class="privacy-note">所有資料只留在這台裝置</span>
+        <button class="icon-button" id="theme-toggle" type="button" aria-label="切換外觀" title="切換外觀"></button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <section class="hero page-shell" aria-labelledby="hero-title">
+      <p class="eyebrow">本機工具 · 不用安裝</p>
+      <h1 class="hero__title" id="hero-title">Git 指令，不用再手動改 placeholder。</h1>
+      <p class="hero__lede">選一個情境，填入必要資訊，就能產生可直接複製的指令。每個功能都是獨立模組，之後新增指令不必重寫整頁。</p>
+
+      <div class="search-box" role="search">
+        <span class="search-box__icon" data-app-icon="search" aria-hidden="true"></span>
+        <label class="sr-only" for="command-search">搜尋 Git 指令</label>
+        <input id="command-search" type="search" inputmode="search" autocomplete="off" spellcheck="false" placeholder="搜尋 rebase、commit、push…">
+        <kbd class="search-box__shortcut" aria-hidden="true">⌘ K</kbd>
+      </div>
+    </section>
+
+    <section class="catalog page-shell" aria-labelledby="catalog-title">
+      <div class="section-heading">
+        <div>
+          <p class="section-kicker">工具庫</p>
+          <h2 id="catalog-title">選擇要處理的情境</h2>
+        </div>
+        <p class="result-count" id="result-count" aria-live="polite"></p>
+      </div>
+
+      <div class="filter-row" id="category-filters" aria-label="指令分類"></div>
+      <div class="command-grid" id="command-grid"></div>
+
+      <div class="empty-state" id="empty-state" hidden>
+        <span class="empty-state__icon" data-app-icon="search" aria-hidden="true"></span>
+        <h3>找不到符合的指令</h3>
+        <p>換個關鍵字，或清除目前的分類篩選。</p>
+        <button class="button button--secondary" id="clear-search" type="button">清除搜尋</button>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer page-shell">
+    <p>Git 指令中心 · 純靜態檔案，可離線使用</p>
+    <a href="README.md">擴充說明</a>
+  </footer>
+
+  <div class="toast" id="toast" role="status" aria-live="polite" aria-atomic="true"></div>
+
+  <script src="data/command-index.js"></script>
+  <script src="assets/js/core.js"></script>
+  <script src="assets/js/home.js"></script>
+</body>
+</html>
