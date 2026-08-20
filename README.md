@@ -1,77 +1,29 @@
 # Git 指令中心
 
-一個不需要安裝、不需要伺服器、解壓縮後直接開啟的 Git 指令產生器。
+不用安裝、不用背參數。選一個情境，填欄位，複製可直接執行的 Git 指令。
 
-## 使用方式
+## 開始使用
 
-1. 解壓縮 ZIP。
-2. 雙擊 `index.html`。
-3. 從首頁選擇工具，填入欄位後複製產生的指令。
+**→ [https://asd880921.github.io/git-command-center/](https://asd880921.github.io/git-command-center/)**
 
-所有輸入只存在瀏覽器頁面中，不會上傳。網站也不會執行 Git 指令。
+打開就能用，不需要註冊或安裝任何東西。
 
-## 專案結構
+## 目前收錄的工具
 
-```text
-index.html                 首頁與搜尋
-command.html               所有指令共用的內容頁外殼
-assets/css/                設計 token、元件與頁面樣式
-assets/js/                 共用互動、首頁與路由邏輯
-data/command-index.js      首頁清單與搜尋 metadata
-commands/*.js              每個 Git 指令的獨立內容模組
-docs/git-common-commands.md 原始筆記
-```
+| 工具 | 用途 |
+| --- | --- |
+| `rebase --onto` | 把一段 commit 搬到另一個分支起點 |
+| `push --force-with-lease` | 安全地強制推送，不會蓋掉別人的 commit |
+| commit message | 依格式產生規範化的 commit message |
 
-這個結構避免把所有內容硬塞進同一份 HTML。`command.html` 只負責共用版型，實際工具各自放在 `commands/`。
+## 關於隱私
 
-## 新增一個 Git 指令
+所有輸入只留在你的瀏覽器裡，不會上傳到任何伺服器。網站只產生文字，**不會替你執行任何 Git 指令** —— 複製後請自行確認分支與遠端狀態再貼上終端機。
 
-### 1. 建立獨立模組
+## 離線使用
 
-複製：
+整個網站是純靜態檔案，沒有後端。想離線用的話，[下載 ZIP](https://github.com/asd880921/git-command-center/archive/refs/heads/main.zip) 解壓縮後直接雙擊 `index.html` 即可。
 
-```text
-commands/_template.js
-```
+## 想新增指令？
 
-改名成例如：
-
-```text
-commands/cherry-pick.js
-```
-
-把檔案中的 `id`、章節與 `render()` 內容換成新工具。
-
-### 2. 加到首頁索引
-
-在 `data/command-index.js` 增加一筆：
-
-```js
-{
-  id: 'cherry-pick',
-  script: 'commands/cherry-pick.js',
-  title: 'cherry-pick',
-  label: '把指定 commit 搬到目前分支',
-  description: '輸入 commit hash 後產生指令。',
-  category: 'commit',
-  categoryLabel: 'Commit',
-  icon: 'branch',
-  accent: 'blue',
-  tags: ['互動產生器'],
-  keywords: ['cherry-pick', 'commit', 'hash']
-}
-```
-
-完成後重新開啟 `index.html` 即可，不需要 build。
-
-## 設計方向
-
-介面參考 Emil Kowalski 的 `apple-design` skill，採用：
-
-- 即時的按壓與複製回饋
-- 半透明浮動導覽與清楚的深度層級
-- 系統字體、尺寸對應的字距與行高
-- 清楚的路徑、具體標籤與 inline validation
-- 深色模式、`prefers-reduced-motion`、`prefers-reduced-transparency` 與高對比支援
-
-參考來源：`https://github.com/emilkowalski/skills/tree/main/skills/apple-design`
+歡迎擴充，做法請見 [docs/DEVELOPMENT.md](docs/DEVELOPMENT.md)。
