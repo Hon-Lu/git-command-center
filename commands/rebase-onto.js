@@ -49,7 +49,7 @@
             '</label>' +
             '<label class="switch-row">' +
               '<span><strong>完成後推送</strong><small>加入 <code>git push --force-with-lease</code></small></span>' +
-              '<input id="include-push" type="checkbox" checked><span class="switch-control" aria-hidden="true"></span>' +
+              '<input id="include-push" type="checkbox"><span class="switch-control" aria-hidden="true"></span>' +
             '</label>' +
           '</div>' +
 

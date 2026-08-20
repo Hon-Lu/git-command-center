@@ -43,7 +43,8 @@
 
   function shellArg(value) {
     var text = String(value).trim();
-    if (/^[A-Za-z0-9._/@:+~-]+$/.test(text)) {
+    // 只有 shell 會解讀的字元才需要引號；中文等一般字元加了引號反而干擾閱讀與複製。
+    if (text && !/[\s'"\\$`;&|<>()\[\]{}*?!#~^]/.test(text)) {
       return text;
     }
     return "'" + text.replace(/'/g, "'\"'\"'") + "'";
