@@ -47,7 +47,8 @@
     if (text && !/[\s'"\\$`;&|<>()\[\]{}*?!#~^]/.test(text)) {
       return text;
     }
-    return "'" + text.replace(/'/g, "'\"'\"'") + "'";
+    // Windows Terminal（cmd / PowerShell）不吃單引號括住的參數，一律用雙引號。
+    return '"' + text + '"';
   }
 
   function doubleQuotedShell(value) {
