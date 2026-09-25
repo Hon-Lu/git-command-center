@@ -4,7 +4,7 @@
 
 ## 開始使用
 
-**→ [https://asd880921.github.io/git-command-center/](https://asd880921.github.io/git-command-center/)**
+**→ [https://hon-lu.github.io/git-command-center/](https://hon-lu.github.io/git-command-center/)**
 
 打開就能用，不需要註冊或安裝任何東西。
 
@@ -22,7 +22,7 @@
 
 ## 離線使用
 
-整個網站是純靜態檔案，沒有後端。想離線用的話，[下載 ZIP](https://github.com/asd880921/git-command-center/archive/refs/heads/main.zip) 解壓縮後直接雙擊 `index.html` 即可。
+整個網站是純靜態檔案，沒有後端。想離線用的話，[下載 ZIP](https://github.com/Hon-Lu/git-command-center/archive/refs/heads/main.zip) 解壓縮後直接雙擊 `index.html` 即可。
 
 ## 想新增指令？
 
